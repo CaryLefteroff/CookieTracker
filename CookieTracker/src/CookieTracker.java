@@ -19,7 +19,7 @@ public class CookieTracker {
         String fileName;
         String date;
         try {
-            fileName = args[0]; //Setup parseFile call
+            fileName = args[0]; //Set up parseFile call
             date = args[1];
             File f = new File(fileName);
             ArrayList<String> arr = parseFile(f, date); //Make the call with the setup variables
@@ -53,7 +53,7 @@ public class CookieTracker {
                 String[] dateArr = strArr[1].split("T");
                 String date = dateArr[0]; //Isolate the date portion of the string
                 if(date.equals(currDate)) {
-                    if(map.containsKey(name)) { //If the cookie is already in the HashMap, iterate the counter
+                    if(map.containsKey(name)) { //If the cookie is already in the HashMap, increment it's counter
                         map.put(name, map.get(name) + 1);
                     } else { //If it isn't in the HashMap, add it and set its counter to 1. Add its name to the list of Cookie Names
                         cookieNames.add(name);
